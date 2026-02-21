@@ -3,3 +3,26 @@
 Estou indo para o segundo ano de faculdade e percebi que aprender python é importantíssimo para a minha jornada.
 Por isso, com o auxílio do Gemini, por 11 dias (antes das minhas aulas voltarem),
 vou desenvolver meus primeiros projetos de python, com a finalidade de aprender o máximo possível.
+
+# 🚀 Projeto 1: Organizador Automático de Arquivos
+
+Este script automatiza a organização de pastas, movendo arquivos para diretórios específicos com base em suas extensões. É o meu primeiro projeto prático focado em **automação de tarefas repetitivas** e manipulação de sistemas de arquivos.
+
+### 🛠️ Tecnologias Utilizadas
+* **Linguagem:** Python 3.12
+* **Biblioteca Principal:** `os` (Interface com o Sistema Operacional)
+* **IDE:** Visual Studio Code
+* **Sistema Operacional:** Linux (Ubuntu/Debian)
+
+### 📂 Funcionalidades
+* **Identificação Automática:** O script mapeia extensões como `.zip`, `.rar`, e `.tar.gz` para pastas específicas como "Compactados".
+* **Criação Dinâmica:** Verifica se as pastas de destino já existem; caso contrário, cria-as automaticamente usando `os.mkdir`.
+* **Gestão de Caminhos:** Utiliza `os.path.join` para garantir a integridade dos caminhos no Linux.
+
+### 💻 Como Executar
+1. Certifique-se de ter o Python instalado.
+2. Defina a sua `pasta_origem` no código.
+3. Execute o script via terminal:
+ 
+   ```bash
+   python3 organizador.py

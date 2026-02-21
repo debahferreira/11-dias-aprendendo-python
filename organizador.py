@@ -21,37 +21,31 @@ def main():
     arquivos_pasta = os.listdir(caminho_pasta_origem)
     print(arquivos_pasta)
 
-    #loop para mover arquivos
-    # for arquivo in arquivos_pasta:
-    #     nome_arquivo, extensao = os.path.splitext(arquivo)
-    #     if extensao in locais["Imagens"]:
-    #         if not os.path.exists(caminho + '/Imagens'):
-    #             os.mkdir("Imagens")
-    #         shutil.move(caminho + '/' + arquivo, caminho + '/Imagens/' + arquivo)
-    #     if extensao in locais["Documentos"]:
-    #         if not os.path.exists(caminho + '/Documentos'):
-    #             os.mkdir("Documentos")
-    #         shutil.move(caminho + '/' + arquivo, caminho + '/Documentos/' + arquivo)
-    #     if extensao in locais["Executaveis"]:
-    #             if not os.path.exists(caminho + '/Executaveis'):
-    #             os.mkdir("Executaveis")
-    #         shutil.move(caminho + '/' + arquivo, caminho + '/Executaveis/' + arquivo)
-    #     if extensao in locais["Compactados"]:
-    #         if not os.path.exists(caminho + '/Compactados'):
-    #             os.mkdir("Compactados")
-    #         shutil.move(caminho + '/' + arquivo, caminho + '/Compactados/' + arquivo)
-
-    #mudando partes do codigo para otimizá-lo
     #loop que percorre cada pasta, ve se ela ja existe (senão, cria) e adiciona todos os arquivos com as extensoes corretas naquela pasta
-    for pasta, extensoes_permitidas in locais.items():
-        caminho_mais_pasta = os.path.join(caminho, pasta)
-        if not os.path.exists(caminho_mais_pasta):
-            os.mkdir(pasta)
-        for arquivo in arquivos_pasta:
-            caminho_arquivo_antes = os.path.join(caminho_pasta_origem, arquivo)
-            nome_arquivo, extensao = os.path.splitext(arquivo)
+    # for pasta, extensoes_permitidas in locais.items():
+    #     caminho_mais_pasta = os.path.join(caminho, pasta)
+    #     if not os.path.exists(caminho_mais_pasta):
+    #         os.mkdir(pasta)
+    #     for arquivo in arquivos_pasta:
+    #         caminho_arquivo_antes = os.path.join(caminho_pasta_origem, arquivo)
+    #         nome_arquivo, extensao = os.path.splitext(arquivo)
+    #         if extensao in extensoes_permitidas:
+    #             caminho_arquivo_depois = os.path.join(caminho_mais_pasta, arquivo)
+    #             shutil.move(caminho_arquivo_antes, caminho_arquivo_depois)
+
+    #loop que percorre os arquivos, vendo qual extensão eles tem
+    for arquivo in arquivos_pasta:
+        caminho_arquivo_antes = os.path.join(caminho_pasta_origem, arquivo)
+        nome_arquivo, extensao = os.path.splitext(arquivo)
+        #loop que verifica se aquela extensão pertence a alguma pasta
+        for pasta, extensoes_permitidas in locais.items():
             if extensao in extensoes_permitidas:
-                caminho_arquivo_depois = os.path.join(caminho_mais_pasta, arquivo)
+                caminho_pasta = os.path.join(caminho, pasta)
+                #verifica se a pasta ja existe, senão cria
+                if not os.path.exists(caminho_pasta):
+                    os.mkdir(caminho_pasta)
+                #move o arquivo para a pasta
+                caminho_arquivo_depois = os.path.join(caminho_pasta, arquivo)
                 shutil.move(caminho_arquivo_antes, caminho_arquivo_depois)
 
 if __name__ == "__main__":

@@ -9,13 +9,11 @@ locais = {
 
 def main():
 
-    #imprime qual a pasta em que estamos agora
-    caminho = os.getcwd()
-    print(caminho)
+    #define pasta de teste onde existe/existirá as outras pastas
+    caminho = '/home/deborah/test_env'
 
     #define pasta de onde vai tirar os arquivos
-    pasta_origem = 'Pasta Origem'
-    caminho_pasta_origem = os.path.join(caminho, pasta_origem)
+    caminho_pasta_origem = '/home/deborah/test_env/Pasta Origem'
 
     #imprime todos os arquivos que tem na pasta em que estamos
     arquivos_pasta = os.listdir(caminho_pasta_origem)

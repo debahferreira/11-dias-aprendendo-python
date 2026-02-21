@@ -21,18 +21,6 @@ def main():
     arquivos_pasta = os.listdir(caminho_pasta_origem)
     print(arquivos_pasta)
 
-    #loop que percorre cada pasta, ve se ela ja existe (senão, cria) e adiciona todos os arquivos com as extensoes corretas naquela pasta
-    # for pasta, extensoes_permitidas in locais.items():
-    #     caminho_mais_pasta = os.path.join(caminho, pasta)
-    #     if not os.path.exists(caminho_mais_pasta):
-    #         os.mkdir(pasta)
-    #     for arquivo in arquivos_pasta:
-    #         caminho_arquivo_antes = os.path.join(caminho_pasta_origem, arquivo)
-    #         nome_arquivo, extensao = os.path.splitext(arquivo)
-    #         if extensao in extensoes_permitidas:
-    #             caminho_arquivo_depois = os.path.join(caminho_mais_pasta, arquivo)
-    #             shutil.move(caminho_arquivo_antes, caminho_arquivo_depois)
-
     #loop que percorre os arquivos, vendo qual extensão eles tem
     for arquivo in arquivos_pasta:
         caminho_arquivo_antes = os.path.join(caminho_pasta_origem, arquivo)

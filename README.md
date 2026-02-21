@@ -21,8 +21,10 @@ Este script automatiza a organização de pastas, movendo arquivos para diretór
 
 ### 💻 Como Executar
 1. Certifique-se de ter o Python instalado.
-2. Defina a sua `pasta_origem` no código.
-3. Execute o script via terminal:
+2. Certifique-se de que a pasta com os arquivos que você quer organizar (`Pasta Origem`) está dentro de outra pasta (`test_env`).
+3. Copie e cole o script dentro de `test_env`.
+4. Defina no script o `caminho` para a sua pasta de teste e o `caminho_pasta_origem`.
+5. Execute o script via terminal (dentro da pasta `test_env`):
  
    ```bash
    python3 organizador.py

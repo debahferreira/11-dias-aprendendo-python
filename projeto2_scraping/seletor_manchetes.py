@@ -1,4 +1,4 @@
-#este programa entra no site da CNN, encontra a primeira manchete do dia, e imprime ela no terminal
+#este programa entra no site da CNN, encontra as manchetes do dia e imprime a lista de manchetes no terminal
 import requests, time
 from bs4 import BeautifulSoup
 
@@ -39,8 +39,9 @@ def main():
         titulos = soup.find_all('h2')
 
         #imprime os titulos da lista
+        print('\nLista de manchetes do dia:')
         for indice, titulo in enumerate(titulos):
-            print(indice, titulo.text)
+            print(indice + 1, titulo.text.strip())
 
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
 #este programa entra no site da CNN, encontra a primeira manchete do dia, e imprime ela no terminal
 import requests, time
+from bs4 import BeautifulSoup
+
 
 def main():
 
@@ -28,6 +30,18 @@ def main():
             print(f'Ocorreu um erro: {e}')
             time.sleep(5)
             i -= 1
+
+    #se conseguiu acessar o site
+    if(sucesso):
+        #acessa o conteudo 
+        soup = BeautifulSoup(response.text, 'html.parser')
+        #cria uma lista de títulos
+        titulos = soup.find_all('h2')
+
+        #imprime os titulos da lista
+        for indice, titulo in enumerate(titulos):
+            print(indice, titulo.text)
+
 
 if __name__ == "__main__":
     main()

@@ -28,3 +28,38 @@ Este script automatiza a organização de pastas, movendo arquivos para diretór
  
    ```bash
    python3 organizador.py
+
+# 🚀 Projeto 2: Automação Scraping de Notícias
+
+Este projeto é um script em Python desenvolvido para automatizar a extração das principais notícias do portal CNN Brasil. O foco principal foi criar um robô resiliente, capaz de lidar com instabilidades de rede através de uma lógica de retentativas e tratamento de exceções.
+
+### 🛠️ Tecnologias Utilizadas
+* **Linguagem:** Python 3.10
+* **Bibliotecas Principais:** `requests` (para realizar as requisições HTTP) e `BeautifulSoup4` (para a análise - parsing - do HTML)
+* **Biblioteca Time:** para o gerenciamento de intervalos entre retentativas.
+* **IDE:** Visual Studio Code
+* **Sistema Operacional:** Linux (Ubuntu/Debian)
+
+### 📂 Funcionalidades
+* **Conexão Resiliente:** Implementação de laço `while` para tentar a conexão até 3 vezes em caso de falha.
+* **Tratamento de Exceções:** Uso de blocos `try/except` para capturar erros de `Timeout` e `RequestException` do módulo `requests`.
+* **Web Scraping Inteligente:** Extração de manchetes utilizando a biblioteca `BeautifulSoup` para navegar no HTML do site.
+* **Limpeza de Dados:** Uso de manipulação de strings para remover espaços em branco e caracteres desnecessários dos títulos extraídos.
+
+### 💻 Como Executar
+1. Clone o repositório
+2. Crie e ative o seu ambiente virtual:
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+
+3. Instale as dependências:
+
+   ```bash
+   pip install requests beautifulsoup4
+
+4. Execute o script:
+ 
+   ```bash
+   python3 seletor_manchetes.py

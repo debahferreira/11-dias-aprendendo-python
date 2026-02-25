@@ -34,8 +34,11 @@ def main():
         #pega dados brutos do site e transforma em uma árvore (parsing)
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        #encontra o preço de um produto específico
-        for preco in soup.find_all('span'):
+        #encontra os preços dos produtos
+        containers_preco = soup.find_all('div', class_="product_card__price__current_price")
+
+        for container in containers_preco:
+            preco = container.find_all('span')
             print(preco)
 
 
